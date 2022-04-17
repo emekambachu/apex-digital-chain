@@ -14,11 +14,11 @@ Home
                 <div class="container">
                     <div class="row">
                         <div class="col col-md-8 col-sm-9 slide-caption">
-                            <h2>We are your financial solution</h2>
+                            <h2>Apex Digital Chain</h2>
                             <p>A trusted destination for traders worldwide, Authorised by FCA, ASIC & FSCA</p>
                             <div class="btns">
                                 <a href="{{ url('about') }}" class="theme-btn">About us</a>
-                                <a href="{{ url('services') }}" class="theme-btn-s2">Our Services</a>
+                                <a href="{{ url('investment-plans') }}" class="theme-btn-s2">Investment Plans</a>
                             </div>
                         </div>
                     </div>
@@ -31,10 +31,9 @@ Home
                     <div class="row">
                         <div class="col col-md-8 col-sm-9 slide-caption">
                             <h2>We are your financial solution</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                             <div class="btns">
-                                <a href="#" class="theme-btn">About us</a>
-                                <a href="#" class="theme-btn-s2">Our Services</a>
+                                <a href="{{ url('about') }}" class="theme-btn">About us</a>
+                                <a href="{{ url('services') }}" class="theme-btn-s2">Our Services</a>
                             </div>
                         </div>
                     </div>
@@ -46,11 +45,10 @@ Home
                 <div class="container">
                     <div class="row">
                         <div class="col col-md-8 col-sm-9 slide-caption">
-                            <h2>We are your financial solution</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <h2>Multi-regulated traders</h2>
                             <div class="btns">
-                                <a href="#" class="theme-btn">About us</a>
-                                <a href="#" class="theme-btn-s2">Our Services</a>
+                                <a href="{{ url('about') }}" class="theme-btn">About us</a>
+                                <a href="{{ url('contact') }}" class="theme-btn-s2">Contact us</a>
                             </div>
                         </div>
                     </div>
