@@ -151,50 +151,52 @@ Home
             <div class="row">
                 <div class="col col-xs-12">
                     <div class="pricing-grids pricing-slider">
+
+                        @foreach($packages as $package)
                         <div class="grid">
                             <div class="pricing-header">
-                                <p class="type">Starter</p>
-                                <h3>$559</h3>
-                                <p class="duration">per consulting</p>
+                                <p class="type">{{ $package->name }}</p>
+                                @if(!empty($package->min))
+                                    <h3 style="font-size: 18px;">
+                                        Minimum: {{ '$'.number_format($package->min) }}</h3>
+                                @endif
+
+                                @if(!empty($package->max))
+                                    <h3 style="font-size: 18px;">
+                                        Maximum: {{ '$'.number_format($package->max) }}</h3>
+                                @else
+                                    <h3 style="font-size: 18px;">and above</h3>
+                                @endif
                             </div>
                             <div class="pricing-body">
-                                <p>Lorem ipsum dolor sit amet Consectetur adipiscing elit sed Do eiusmod tem incid ut aliquip id Ut labore et dolore mana</p>
-                                <a href="#" class="theme-btn">Start plan</a>
+                                @if(!empty($package->monthly_profit))
+                                    <p style="font-size: 15px; margin: 1px 0;">Monthly Profit: {{ $package->monthly_profit }}%</p>
+                                @endif
+
+                                @if(!empty($package->option3))
+                                    <p style="font-size: 15px; margin: 1px 0;">{{ $package->option3 }}</p>
+                                @endif
+
+                                @if(!empty($package->roi))
+                                    <p style="font-size: 15px; margin: 1px 0;">ROI: {{ $package->roi }}%</p>
+                                @endif
+
+                                @if(!empty($package->referral_bonus))
+                                    <p style="font-size: 15px; margin: 1px 0;">Referral Bonus: {{ $package->referral_bonus }}%</p>
+                                @endif
+
+                                @if(!empty($package->expert_advice))
+                                    <p style="font-size: 15px; margin: 1px 0;">{{ $package->expert_advice }}</p>
+                                @endif
+
+                                @if(!empty($package->days_turnover))
+                                    <p style="font-size: 15px; margin: 1px 0;">Turn over: {{ $package->days_turnover }} days</p>
+                                @endif
+                                <a href="{{ route('register') }}" class="theme-btn">Sign up</a>
                             </div>
                         </div>
-                        <div class="grid">
-                            <div class="pricing-header">
-                                <p class="type">Starter</p>
-                                <h3>$559</h3>
-                                <p class="duration">per consulting</p>
-                            </div>
-                            <div class="pricing-body">
-                                <p>Lorem ipsum dolor sit amet Consectetur adipiscing elit sed Do eiusmod tem incid ut aliquip id Ut labore et dolore mana</p>
-                                <a href="#" class="theme-btn">Start plan</a>
-                            </div>
-                        </div>
-                        <div class="grid">
-                            <div class="pricing-header">
-                                <p class="type">Starter</p>
-                                <h3>$559</h3>
-                                <p class="duration">per consulting</p>
-                            </div>
-                            <div class="pricing-body">
-                                <p>Lorem ipsum dolor sit amet Consectetur adipiscing elit sed Do eiusmod tem incid ut aliquip id Ut labore et dolore mana</p>
-                                <a href="#" class="theme-btn">Start plan</a>
-                            </div>
-                        </div>
-                        <div class="grid">
-                            <div class="pricing-header">
-                                <p class="type">Starter</p>
-                                <h3>$559</h3>
-                                <p class="duration">per consulting</p>
-                            </div>
-                            <div class="pricing-body">
-                                <p>Lorem ipsum dolor sit amet Consectetur adipiscing elit sed Do eiusmod tem incid ut aliquip id Ut labore et dolore mana</p>
-                                <a href="#" class="theme-btn">Start plan</a>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div> <!-- end row -->
@@ -221,7 +223,7 @@ Home
                                 <div class="details-link">
                                     <a href="#"><i class="fa fa-arrow-right"></i></a>
                                 </div>
-                                <img src="{{ asset('main/assets/images/services/img-1.jpg') }}" alt>
+                                <img src="{{ asset('images/services/cryptocurrencies.jpg') }}" alt>
                             </div>
                             <div class="service-details">
                                 <h3>Cryptocurrencies</h3>
@@ -233,7 +235,7 @@ Home
                                 <div class="details-link">
                                     <a href="#"><i class="fa fa-arrow-right"></i></a>
                                 </div>
-                                <img src="{{ asset('main/assets/images/services/img-2.jpg') }}" alt>
+                                <img src="{{ asset('images/services/options_trading.jpg') }}" alt>
                             </div>
                             <div class="service-details">
                                 <h3>Options Trading</h3>
@@ -245,7 +247,7 @@ Home
                                 <div class="details-link">
                                     <a href="#"><i class="fa fa-arrow-right"></i></a>
                                 </div>
-                                <img src="{{ asset('main/assets/images/services/img-3.jpg') }}" alt>
+                                <img src="{{ asset('images/services/asset_management.jpg') }}" alt>
                             </div>
                             <div class="service-details">
                                 <h3>Asset Management</h3>
@@ -281,7 +283,7 @@ Home
                                 <div class="details-link">
                                     <a href="#"><i class="fa fa-arrow-right"></i></a>
                                 </div>
-                                <img src="{{ asset('main/assets/images/services/img-6.jpg') }}" alt>
+                                <img src="{{ asset('images/services/forex.jpg') }}" alt>
                             </div>
                             <div class="service-details">
                                 <h3>Forex</h3>
@@ -294,6 +296,57 @@ Home
         </div> <!-- end container -->
     </section>
     <!-- end services-section -->
+
+    <section class="services-section-s3 section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-8 col-md-offset-2">
+                    <div class="section-title-s3">
+                        <h2>How it works</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-xs-12">
+                    <div class="services-s2-grids">
+                        <div class="grid">
+                            <div class="inner">
+                                <div class="icon">
+                                    <i class="fi flaticon-balance"></i>
+                                </div>
+                                <div class="details">
+                                    <h3><a href="#">Sign up</a></h3>
+                                    <p>Sign up to our account and fill all relevant details including your bitcoin wallet address.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="inner">
+                                <div class="icon">
+                                    <i class="fi flaticon-wallet"></i>
+                                </div>
+                                <div class="details">
+                                    <h3><a href="#">Select Investment Package</a></h3>
+                                    <p>Select investment package, create new investment and fund your wallet</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="inner">
+                                <div class="icon">
+                                    <i class="fi flaticon-calculator"></i>
+                                </div>
+                                <div class="details">
+                                    <h3><a href="#">Get Paid</a></h3>
+                                    <p>Receive payment with bonus, profit or commission.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end row -->
+        </div> <!-- end container -->
+    </section>
 
     <!-- start cta -->
     <section class="cta">
@@ -425,362 +478,17 @@ Home
     </section>
     <!-- end about-section -->
 
-    <!-- start projects-section -->
-    <section class="projects-section section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col col-xs-12">
-                    <div class="section-title">
-                        <h2>Our Best Works</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col col-xs-12 sortable-gallery">
-                    <div class="gallery-filters projects-list">
-                        <ul>
-                            <li><a data-filter="*" href="#" class="current">All</a></li>
-                            <li><a data-filter=".business" href="#">Business</a></li>
-                            <li><a data-filter=".finance" href="#">Finance</a></li>
-                            <li><a data-filter=".consulting" href="#">Consulting</a></li>
-                            <li><a data-filter=".events" href="#">Events</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="gallery-container projects-grid">
-                        <div class="grid business consulting">
-                            <div class="inner">
-                                <div class="img-holder">
-                                    <img src="{{ asset('main/assets/images/projects/img-1.jpg') }}" alt>
-                                </div>
-                                <div class="details">
-                                    <div class="details-inner">
-                                        <ul>
-                                            <li><a href="{{ asset('main/assets/images/projects/img-1.jpg') }}"
-                                                   class="fancybox">
-                                                    <i class="fa fa-search"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                        </ul>
-                                        <h3>Pied Piper</h3>
-                                        <p class="cat">startup</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid business finance">
-                            <div class="inner">
-                                <div class="img-holder">
-                                    <img src="{{ asset('main/assets/images/projects/img-2.jpg') }}" alt>
-                                </div>
-                                <div class="details">
-                                    <div class="details-inner">
-                                        <ul>
-                                            <li><a href="{{ asset('main/assets/images/projects/img-2.jpg') }}"
-                                                   class="fancybox"><i class="fa fa-search"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                        </ul>
-                                        <h3>Pied Piper</h3>
-                                        <p class="cat">startup</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid events">
-                            <div class="inner">
-                                <div class="img-holder">
-                                    <img src="{{ asset('main/assets/images/projects/img-3.jpg') }}" alt>
-                                </div>
-                                <div class="details">
-                                    <div class="details-inner">
-                                        <ul>
-                                            <li><a href="{{ asset('main/assets/images/projects/img-3.jpg') }}"
-                                                   class="fancybox"><i class="fa fa-search"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                        </ul>
-                                        <h3>Pied Piper</h3>
-                                        <p class="cat">startup</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid event finance consulting">
-                            <div class="inner">
-                                <div class="img-holder">
-                                    <img src="{{ asset('main/assets/images/projects/img-4.jpg') }}" alt>
-                                </div>
-                                <div class="details">
-                                    <div class="details-inner">
-                                        <ul>
-                                            <li><a href="{{ asset('main/assets/images/projects/img-4.jpg') }}"
-                                                   class="fancybox"><i class="fa fa-search"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                        </ul>
-                                        <h3>Pied Piper</h3>
-                                        <p class="cat">startup</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid finance events business">
-                            <div class="inner">
-                                <div class="img-holder">
-                                    <img src="{{ asset('main/assets/images/projects/img-5.jpg') }}" alt>
-                                </div>
-                                <div class="details">
-                                    <div class="details-inner">
-                                        <ul>
-                                            <li><a href="{{ asset('main/assets/images/projects/img-5.jpg') }}"
-                                                   class="fancybox">
-                                                    <i class="fa fa-search"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                        </ul>
-                                        <h3>Pied Piper</h3>
-                                        <p class="cat">startup</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid consulting finance business">
-                            <div class="inner">
-                                <div class="img-holder">
-                                    <img src="{{ asset('main/assets/images/projects/img-6.jpg') }}" alt>
-                                </div>
-                                <div class="details">
-                                    <div class="details-inner">
-                                        <ul>
-                                            <li><a href="{{ asset('main/assets/images/projects/img-6.jpg') }}"
-                                                   class="fancybox"><i class="fa fa-search"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                        </ul>
-                                        <h3>Pied Piper</h3>
-                                        <p class="cat">startup</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid events consulting">
-                            <div class="inner">
-                                <div class="img-holder">
-                                    <img src="{{ asset('main/assets/images/projects/img-7.jpg') }}" alt>
-                                </div>
-                                <div class="details">
-                                    <div class="details-inner">
-                                        <ul>
-                                            <li><a href="{{ asset('main/assets/images/projects/img-7.jpg') }}"
-                                                   class="fancybox"><i class="fa fa-search"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                        </ul>
-                                        <h3>Pied Piper</h3>
-                                        <p class="cat">startup</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid business finance">
-                            <div class="inner">
-                                <div class="img-holder">
-                                    <img src="{{ asset('main/assets/images/projects/img-8.jpg') }}" alt>
-                                </div>
-                                <div class="details">
-                                    <div class="details-inner">
-                                        <ul>
-                                            <li><a href="{{ asset('main/assets/images/projects/img-8.jpg') }}"
-                                                   class="fancybox"><i class="fa fa-search"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                        </ul>
-                                        <h3>Pied Piper</h3>
-                                        <p class="cat">startup</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- end col -->
-            </div> <!-- end row -->
-        </div> <!-- end container -->
-    </section>
-    <!-- end projects-section -->
-
-    <!-- start partners-section -->
-    <section class="partners-section">
-        <h2 class="hidden">Partners</h2>
-        <div class="container">
-            <div class="row">
-                <div class="col col-xs-12">
-                    <div class="partners-slider">
-                        <div class="grid">
-                            <img src="{{ asset('main/assets/images/partners/img-1.png') }}" alt>
-                        </div>
-                        <div class="grid">
-                            <img src="{{ asset('main/assets/images/partners/img-2.png') }}" alt>
-                        </div>
-                        <div class="grid">
-                            <img src="{{ asset('main/assets/images/partners/img-3.png') }}" alt>
-                        </div>
-                        <div class="grid">
-                            <img src="{{ asset('main/assets/images/partners/img-4.png') }}" alt>
-                        </div>
-                        <div class="grid">
-                            <img src="{{ asset('main/assets/images/partners/img-5.png') }}" alt>
-                        </div>
-                        <div class="grid">
-                            <img src="{{ asset('main/assets/images/partners/img-3.png') }}" alt>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- end container -->
-    </section>
-    <!-- end partners-section -->
-
-    <!-- start testimonials-section -->
-    <section class="testimonials-section section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col col-xs-12">
-                    <div class="section-title">
-                        <h2>Testimonials</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col col-lg-10 col-lg-offset-1">
-                    <div class="testimonials-slider testimonials-grids">
-                        <div class="grid">
-                            <div class="client-pic">
-                                <img src="{{ asset('main/assets/images/testimonials/img-1.jpg') }}" alt>
-                            </div>
-                            <div class="details">
-                                <h4>Monica Hall</h4>
-                                <span class="client-post">CEO, Bream-Hall Partners</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                            </div>
-                        </div>
-                        <div class="grid">
-                            <div class="client-pic">
-                                <img src="{{ asset('main/assets/images/testimonials/img-2.jpg') }}" alt>
-                            </div>
-                            <div class="details">
-                                <h4>Jared Dunn</h4>
-                                <span class="client-post">CEO, Bream-Hall Partners</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                            </div>
-                        </div>
-                        <div class="grid">
-                            <div class="client-pic">
-                                <img src="{{ asset('main/assets/images/testimonials/img-1.jpg') }}" alt>
-                            </div>
-                            <div class="details">
-                                <h4>Monica Hall</h4>
-                                <span class="client-post">CEO, Bream-Hall Partners</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- end container -->
-    </section>
-    <!-- end testimonials-section -->
-
-
     <!-- start newsletter-section -->
     <section class="newsletter-section">
         <div class="container">
             <div class="row">
-                <div class="col col-lg-8 col-md-7">
-                    <h2><span>Subscribe your email</span> for our Newsletter</h2>
-                    <form>
-                        <div>
-                            <input type="text" class="form-control">
-                            <button>Subscribe</button>
-                        </div>
-                    </form>
+                <div class="col-12">
+                    <h2><span>Our Latest</span> News</h2>
+                    <!-- 24-7 Press Release Newswire Landing Page Widget Code Starts Here --> <script type="text/javascript" src="https://news.24-7pressrelease.com/247pr-news-widget.js?widgettitle=Cryptocurrency News&amp;categories=489,&amp;showRelease=1&amp;width=auto&amp;headlinebold=1&amp;headlinesonly=0&amp;headlinecolor=f7921a&amp;briefcolor=666666&amp;textcolor=333333&amp;typeface=arial&amp;fontsize=11&amp;width=auto&amp;headlinesepstyle=dotted&amp;showimages=1&amp;numstories=5&amp;bgcolor=ffffff&amp;urldest=247pr"></script> <!-- 24-7 Press Release Newswire Landing Page Widget Code Ends Here -->
                 </div>
-            </div>
-            <div class="newsletter-man">
-                <img src="{{ asset('main/assets/images/newsletter-man.png') }}" alt>
             </div>
         </div> <!-- end contianer -->
     </section>
     <!-- end newsletter-section -->
-
-
-    <!-- start blog-section -->
-    <section class="blog-section section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col col-md-8 col-md-offset-2">
-                    <div class="section-title-s3">
-                        <h2>Recent News</h2>
-                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row news-grids">
-                <div class="col col-md-4 col-xs-6">
-                    <div class="grid">
-                        <div class="entry-media">
-                            <img src="{{ asset('main/assets/images/blog/img-1.jpg') }}" alt>
-                        </div>
-                        <div class="entry-body">
-                            <div class="entry-header">
-                                <span class="date">16 Hours ago</span>
-                                <h3><a href="#">Cut corporate taxes to boost growth</a></h3>
-                            </div>
-                            <div class="entry-details">
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                            <div class="entry-meta">
-                                <a href="#" class="read-more">Read More</a>
-                                <a href="#" class="comments"><i class="fa fa-comments"></i> 10 Comments</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md-4 col-xs-6">
-                    <div class="grid">
-                        <div class="entry-media">
-                            <img src="{{ asset('main/assets/images/blog/img-2.jpg') }}" alt>
-                        </div>
-                        <div class="entry-body">
-                            <div class="entry-header">
-                                <span class="date">16 Hours ago</span>
-                                <h3><a href="#">European firms look to Canada to grow assets</a></h3>
-                            </div>
-                            <div class="entry-details">
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                            <div class="entry-meta">
-                                <a href="#" class="read-more">Read More</a>
-                                <a href="#" class="comments"><i class="fa fa-comments"></i> 10 Comments</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md-4 col-xs-6">
-                    <div class="grid">
-                        <div class="entry-media">
-                            <img src="{{ asset('main/assets/images/blog/img-3.jpg') }}" alt>
-                        </div>
-                        <div class="entry-body">
-                            <div class="entry-header">
-                                <span class="date">16 Hours ago</span>
-                                <h3><a href="#">British drinkers leave Molson Coors thirsty</a></h3>
-                            </div>
-                            <div class="entry-details">
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                            <div class="entry-meta">
-                                <a href="#" class="read-more">Read More</a>
-                                <a href="#" class="comments"><i class="fa fa-comments"></i> 10 Comments</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- end container -->
-    </section>
-    <!-- end blog-section -->
 
 @endsection

@@ -146,11 +146,10 @@
         <div class="upper-footer">
             <div class="container">
                 <div class="row">
-                    <div class="col col-md-4 col-sm-6">
+                    <div class="col-md-4">
                         <div class="widget about-widget">
                             <div class="footer-logo">
                                 <img src="{{ asset('main/assets/images/footer-logo.png') }}" alt></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
                             <ul class="contact-info">
                                 <li><i class="fa fa-phone"></i> +123 (4567) 890  </li>
                                 <li><i class="fa fa-envelope"></i> info@apexdigitalchain.com</li>
@@ -159,7 +158,7 @@
                         </div>
                     </div>
 
-                    <div class="col col-md-2 col-sm-6">
+                    <div class="col-md-4">
                         <div class="widget links-widget">
                             <h3>Links</h3>
                             <ul>
@@ -173,48 +172,21 @@
                         </div>
                     </div>
 
-                    <div class="col col-md-3 col-sm-6">
+                    <div class="col-md-4">
                         <div class="widget support-widget">
                             <h3>Support</h3>
                             <ul>
                                 <li><a href="#">Contact Us</a></li>
                                 <li><a href="#">Submit a Ticket</a></li>
-                                <li><a href="#">Visit Knowledge Base</a></li>
-                                <li><a href="#">Support System</a></li>
-                                <li><a href="#">Refund Policy</a></li>
                                 <li><a href="#">Professional Services</a></li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col col-md-3 col-sm-6">
-                        <div class="widget twitter-feed-widget">
-                            <h3>Twitter Feed</h3>
-                            <ul>
-                                <li>
-                                    <div class="text">
-                                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Ed quia con sequuntur magni dolores.</p>
-                                    </div>
-                                    <div class="info-box">
-                                        <i class="fa fa-twitter"></i>
-                                        <strong><a href="#">@Mark Wahlberg</a></strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="text">
-                                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Ed quia con sequuntur magni dolores.</p>
-                                    </div>
-                                    <div class="info-box">
-                                        <i class="fa fa-twitter"></i>
-                                        <strong><a href="#">@Mark Wahlberg</a></strong>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div> <!-- end upper-footer -->
+
         <div class="copyright-info">
             <div class="container">
                 <div class="row">

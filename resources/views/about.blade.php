@@ -5,189 +5,151 @@
 @endsection
 
 @section('content')
-    <div class="breadcrumb-area" style="background-image:url('{{ asset('images/bg/1.jpg') }}')">
+
+    <section class="page-title">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-inner">
-                        <h1 class="page-title">About Us </h1>
-                        <ul class="page-list">
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                            <li>About Us</li>
-                        </ul>
-                    </div>
+                <div class="col col-xs-12">
+                    <h2>About us</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li>About us</li>
+                    </ol>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div> <!-- end row -->
+        </div> <!-- end container -->
+    </section>
 
-    <!-- about-Area Start-->
-    <section class="about-area pd-top-96 pd-bottom-100">
+    <section class="projects-section-s2 section-padding" style="background-color:#fff;">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-5">
-                    <div class="section-title section-title-2">
-                        <h6 class="sub-title">Apex Digital Chain</h6>
-                        <h2 class="title"><span>About</span> us</h2>
-                    </div>
-                </div>
-                <div class="col-lg-7 align-self-center">
-                    <p>After gaining knowledge and experience for years our mission was apparent, we needed to clear a path for small to mid-sized investors to smarter innovative trading and increased profits. Cryptocurrency market is developing in a rapid pace and is one of promising options of economy.<br>
-                        To that end we provide support to our investors with a stable and easy-to-use technology built to manage their investment, from trading to making profits. Margin traders are not left behind in this.</p>
-                </div>
-            </div>
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="about-video-wrap">
-                        <div class="thumb">
-                            <img src="{{ asset('main/img/about/bg.png') }}" alt="img">
-                        </div>
-                    </div>
-                    <div class="about-nav-pills">
-                        <ul class="nav nav-pills">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="pill" href="#pills-support">
-                                <span class="thumb">
-                                    <img src="{{ asset('main/img/about/1.png') }}" alt="img">
-                                </span> VALUES
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#pills-comunication">
-                                <span class="thumb">
-                                    <img src="{{ asset('main/img/about/2.png') }}" alt="img">
-                                </span> MISSION
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#pills-delivery">
-                                <span class="thumb">
-                                    <img src="{{ asset('main/img/about/3.png') }}" alt="img">
-                                </span> PARTNERSHIPS
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="pills-support">
-                                <p>Apex Digital Chain was founded on the principle of delivering superior long and short term returns at the lowest possible risk. DMI believes that having a world-class investor base of like-minded, high-quality organizations is key to investment success.</p>
-                            </div>
-                            <div class="tab-pane fade" id="pills-comunication">
-                                <p>Offering comprehensive and flexible assets to investors within the Cryptocurrency market, with low friction, transparency and reliability and with highest possible return on investment.</p>
-                            </div>
-                            <div class="tab-pane fade" id="pills-delivery">
-                                <p>We have built partnerships overtime with other successful companies with complimenting corporate and social goals as our company.</p>
+                <div class="col col-md-6">
+                    <div class="projects-grid">
+                        <div class="grid">
+                            <div class="inner">
+                                <div class="img-holder">
+                                    <img src="{{ asset('main/assets/images/projects/img-1.jpg') }}" alt="">
+                                </div>
                             </div>
                         </div>
+                        <div class="grid">
+                            <div class="inner">
+                                <div class="img-holder">
+                                    <img src="{{ asset('main/assets/images/projects/img-2.jpg') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="inner">
+                                <div class="img-holder">
+                                    <img src="{{ asset('main/assets/images/projects/img-3.jpg') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="inner">
+                                <div class="img-holder">
+                                    <img src="{{ asset('main/assets/images/projects/img-4.jpg') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="inner">
+                                <div class="img-holder">
+                                    <img src="{{ asset('main/assets/images/projects/img-5.jpg') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="inner">
+                                <div class="img-holder">
+                                    <img src="{{ asset('main/assets/images/projects/img-6.jpg') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div> <!-- end col -->
+                <div class="col col-md-6">
+                    <div class="section-title-s5">
+                        <h2>Apex Digital Chain</h2>
+                        <p>After gaining knowledge and experience for years our mission was apparent, we needed to clear a path for small to mid-sized investors to smarter innovative trading and increased profits.<br>
+                            Cryptocurrency market is developing in a rapid pace and is one of promising options of economy. To that end we provide support to our investors with a stable and easy-to-use technology built to manage their investment, from trading to making profits. Margin traders are not left behind in this.</p>
+                        <div class="skill-progress-bar">
+                            <div class="skills">
+                                <div class="skill">
+                                    <h6>Finance</h6>
+                                    <div class="progress">
+                                        <div class="progress-bar appeared"
+                                             data-percent="85" style="width: 85%;"><span>85%</span></div>
+                                    </div>
+                                </div>
+                                <div class="skill">
+                                    <h6>Business</h6>
+                                    <div class="progress">
+                                        <div class="progress-bar appeared"
+                                             data-percent="98" style="width: 98%;"><span>98%</span></div>
+                                    </div>
+                                </div>
+                                <div class="skill">
+                                    <h6>Investment</h6>
+                                    <div class="progress">
+                                        <div class="progress-bar appeared"
+                                             data-percent="92" style="width: 92%;"><span>92%</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="col-lg-4">
-                    <div class="message-wrap text-center">
-                        <h6 class="title">Get Advisor for consultations</h6>
-                        <form class="message-form-wrap">
-                            <p>Dapibus voluptatem taciti curtur! Fuga aliquet ad quas justo at ullam </p>
-                            <div class="single-input-wrap input-group">
-                                <label>FULL NAME</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="single-input-wrap input-group">
-                                <label>EMAIL ADDRESS</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="single-input-wrap input-group">
-                                <label>WRITE SOMETHING</label>
-                                <textarea class="form-control" rows="4" name="note"></textarea>
-                            </div>
-                            <div class="submit-area text-center">
-                                <button type="submit" class="btn btn-pink w-100">SEND YOUR MESSAGE</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="about-contact-wrap">
-                        <img src="{{ asset('main/img/icon/phone.png') }}" alt="img">
-                        <h6>Call Us: +1(631)343-5226</h6>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> <!-- end row -->
+        </div> <!-- end container -->
     </section>
-    <!-- about-Area End-->
 
-    <section class="client-area text-center pd-top-88 pd-bottom-90">
+    <section class="section-padding about-section-s5" style="background-color: #eeeeee;">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="section-title section-title-2 text-center">
-                        <h2 class="title">Our Guiding Principles</h2>
-                        <p>Put the interests of DTO’s investors first in everything the firm does. Acting as a fiduciary is a sacred trust that can never be broken.<br>
-                            Act with the highest level of integrity in every action DTO takes. The firm’s reputation is its most important asset. Approach public investing with the same philosophy as if purchasing entire companies, by acquiring high-quality businesses that generate large amounts of compounding free cash flow at prices well below their intrinsic value.<br>
-                            Focus on building a world-class team and culture. The firm cares deeply about being regarded in the industry as first rate and as the best at every touch point. Communicate with investment partners candidly and be as transparent as required for them to always understand what DMI is doing and why.
-                        </p>
+
+            <div class="row">
+                <div class="col col-md-7">
+                    <div class="about-details">
+                        <h3>Mission</h3>
+                        <p>Offering comprehensive and flexible assets to investors within the Cryptocurrency market, with low friction, transparency and reliability and with highest possible return on investment.</p>
+                    </div>
+
+                    <div class="about-details">
+                        <h3>Values</h3>
+                        <p>Apex Digital Chain was founded on the principle of delivering superior long and short term returns at the lowest possible risk. DMI believes that having a world-class investor base of like-minded, high-quality organizations is key to investment success.</p>
+                    </div>
+
+                    <div class="about-details">
+                        <h3>Partnerships</h3>
+                        <p>We have built partnerships overtime with other successful companies with complimenting corporate and social goals as our company.</p>
+                    </div>
+                </div>
+
+                <div class="col col-md-5">
+                    <div class="about-img">
+                        <img src="{{ asset('images/about/1.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
-        </div>
+        </div> <!-- end container -->
     </section>
 
-    <!-- industries-Area Start-->
-    <section class="industries-area bg-grey-2 pd-top-96 pd-bottom-70">
+    <section class="newsletter-section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="section-title section-title-2 text-center">
-                        <h6 class="sub-title">Industries</h6>
-                        <h2 class="title">Our Industries Features</h2>
-                    </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2><span>Our guiding</span> Principles</h2>
+                   <p style="color: #fff; font-size: 15px; font-weight: bold;">
+                       Put the interests of DTO’s investors first in everything the firm does. Acting as a fiduciary is a sacred trust that can never be broken.
+                       Act with the highest level of integrity in every action DTO takes. The firm’s reputation is its most important asset. Approach public investing with the same philosophy as if purchasing entire companies, by acquiring high-quality businesses that generate large amounts of compounding free cash flow at prices well below their intrinsic value.
+                       Focus on building a world-class team and culture. The firm cares deeply about being regarded in the industry as first rate and as the best at every touch point. Communicate with investment partners candidly and be as transparent as required for them to always understand what DMI is doing and why.
+                   </p>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single-industries-wrap">
-                        <div class="media">
-                            <div class="thumb">
-                                <img src="{{ asset('main/img/industries/1.png') }}" alt="img">
-                            </div>
-                            <div class="single-industries-details media-body">
-                                <a href="#"><i class="fa fa-ellipsis-v float-right"></i></a>
-                                <h6><a href="">Constant Progression</a></h6>
-                                <p>Interest is applied to your account 24/7. Once it has been added to your account balance, you can either reinvest it to increase your daily profit, or you can withdraw it.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single-industries-wrap">
-                        <div class="media">
-                            <div class="thumb">
-                                <img src="{{ asset('main/img/industries/1.png') }}" alt="img">
-                            </div>
-                            <div class="single-industries-details media-body">
-                                <a href="#"><i class="fa fa-ellipsis-v float-right"></i></a>
-                                <h6><a href="">Unique Platform</a></h6>
-                                <p>Our team has developed a unique platform for user-friendly and safe to work with investments.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single-industries-wrap">
-                        <div class="media">
-                            <div class="thumb">
-                                <img src="{{ asset('main/img/industries/2.png') }}" alt="img">
-                            </div>
-                            <div class="single-industries-details media-body">
-                                <a href="#"><i class="fa fa-ellipsis-v float-right"></i></a>
-                                <h6><a href="">Quickly and Instantly</a></h6>
-                                <p>You can create your mutual fund</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+        </div> <!-- end contianer -->
     </section>
-    <!-- industries-Area End-->
+
+
 @endsection
