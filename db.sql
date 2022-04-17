@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 30, 2022 at 08:17 AM
+-- Generation Time: Apr 17, 2022 at 02:29 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `investment_packages` (
 --
 
 INSERT INTO `investment_packages` (`id`, `name`, `min`, `max`, `referral_bonus`, `monthly_profit`, `days_turnover`, `expert_advice`, `deposit_bonus`, `option1`, `option2`, `option3`, `description`, `roi`, `compound_roi`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'Basic', 50, 499, NULL, NULL, 24, '24/7 Support: YES', NULL, NULL, 'Money Back guaranteed', 'Instant Automatic Withdrawal', 'Build an emergency fund so you can weather any storm. We recommend this for every client, because life happens.', 10, NULL, 1, NULL, NULL),
+(1, 'Basic', 50, 499, 20, 30, 24, '24/7 Support: YES', NULL, NULL, 'Money Back guaranteed', 'Instant Automatic Withdrawal', 'Build an emergency fund so you can weather any storm. We recommend this for every client, because life happens.', 10, NULL, 1, NULL, '2022-02-28 10:25:30'),
 (2, 'Silver', 500, 4999, NULL, NULL, 48, '24/7 Support: YES', NULL, NULL, 'Money Back guaranteed', 'Instant Automatic Withdrawal', 'Helps investors lower risk; whether you’re saving for a purchase, short-term goal or a payment plan. This plan will help you achieve it Faster', 20, NULL, 1, NULL, NULL),
 (3, 'Gold', 2000, NULL, NULL, NULL, 72, '24/7 Support: YES', NULL, NULL, 'Money Back guaranteed', 'Instant Automatic Withdrawal', 'Start on the path of financial freedom. It may seem far away, but starting sooner makes it easier to get the retirement lifestyle you want.\r\n            (You can make daily/weekly/Monthly deposits till you get to the minimum investment)\r\n            ', 50, NULL, 1, NULL, NULL);
 
@@ -170,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -187,7 +187,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2020_10_16_004759_create_transactions_table', 2),
 (10, '2020_12_22_061339_create_admin_wallet_addresses_table', 3),
 (11, '2021_11_19_175446_create_user_wallet_addresses_table', 4),
-(12, '2021_11_19_175805_create_user_referrals_table', 4);
+(12, '2021_11_19_175805_create_user_referrals_table', 4),
+(16, '2022_02_27_135307_create_testimonies_table', 6);
 
 -- --------------------------------------------------------
 
@@ -202,6 +203,33 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL,
   KEY `password_resets_email_index` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimonies`
+--
+
+DROP TABLE IF EXISTS `testimonies`;
+CREATE TABLE IF NOT EXISTS `testimonies` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `occupation` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `testimony` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` blob NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `testimonies`
+--
+
+INSERT INTO `testimonies` (`id`, `name`, `occupation`, `testimony`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'Henry Flent', 'Crypto Analyst, Digital Nomads Inc.', 'rk[pkmr rr,lr krlmrlr rlkm lr r rkmr;lr lr rkmr r;lkmrr', 0x3136343539373331353066616365322e6a7067, '2022-02-27 13:41:42', '2022-02-27 13:45:50'),
+(2, 'Dell Nagma', 'CEO, Digital Nomads Inc.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur', 0x3136343539373435323152656374616e676c652039302e706e67, '2022-02-27 14:08:41', '2022-02-27 14:08:41'),
+(3, 'David Cleen', 'Director, Zent Investment Strategies', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur', 0x31363435393734363531356631343039356461613130352e6a7067, '2022-02-27 14:10:51', '2022-02-27 14:10:51');
 
 -- --------------------------------------------------------
 
@@ -240,6 +268,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `referer` varchar(190) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `referral_number` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -256,15 +285,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `referral_number`, `email_verified_at`, `password`, `password_backup`, `image`, `valid_id`, `mobile`, `country`, `state`, `address`, `is_active`, `remember_token`, `created_at`, `updated_at`) VALUES
-(24, 'Dexter Dexter', 'neutrondeveloper@gmail.com', 'CGL57838426', NULL, '$2y$10$b0w.CRWmHtL4fFPk2iZ6oOrc1uIjBDLtXpUMSPn/6rwexHz/f60fS', '11111111', '1637506211tierra-mallorca-NpTbVOkkom8-unsplash.jpg', '1637506211tierra-mallorca-NpTbVOkkom8-unsplash.jpg', NULL, 'Algeria', 'Ain Temouchent', NULL, 1, NULL, '2021-11-21 13:50:11', '2021-11-21 13:50:11'),
-(25, 'Dexter Dexter', 'embachu@nourishingafrica.com', 'CGL99771104', NULL, '$2y$10$MkUmbnXg9af/Yqb6x08wuOquvMlJktYV/b74qxcfhVBxuz5U1igpe', '11111111', '1639226288attachment_37225515.jpg', NULL, '1111111111', 'Argentina', 'Formosa', NULL, 0, NULL, '2021-12-11 11:38:08', '2021-12-11 11:38:08');
+INSERT INTO `users` (`id`, `name`, `email`, `referer`, `referral_number`, `email_verified_at`, `password`, `password_backup`, `image`, `valid_id`, `mobile`, `country`, `state`, `address`, `is_active`, `remember_token`, `created_at`, `updated_at`) VALUES
+(24, 'Dexter Dexter', 'neutrondeveloper@gmail.com', NULL, 'CGL57838426', NULL, '$2y$10$b0w.CRWmHtL4fFPk2iZ6oOrc1uIjBDLtXpUMSPn/6rwexHz/f60fS', '11111111', '1637506211tierra-mallorca-NpTbVOkkom8-unsplash.jpg', '1637506211tierra-mallorca-NpTbVOkkom8-unsplash.jpg', NULL, 'Algeria', 'Ain Temouchent', NULL, 1, NULL, '2021-11-21 13:50:11', '2021-11-21 13:50:11'),
+(28, 'Dexter neutron', 'embachu@nourishingafrica.com', '1111111111', 'CGL95937244', NULL, '$2y$10$9jiWU2rmsfCXEZKCjGtUQuWELcAwAdsdPmU67eqwfu0i7qda2EjfO', '11111111', '16462144165e9dc98945424.png', '16462144165e53b859976ad.png', '0000000000', 'Nigeria', 'Lagos', NULL, 0, NULL, '2022-03-02 08:46:56', '2022-03-02 08:46:56');
 
 -- --------------------------------------------------------
 
@@ -326,13 +355,16 @@ CREATE TABLE IF NOT EXISTS `wallets` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wallets`
 --
 
 INSERT INTO `wallets` (`id`, `user_id`, `amount`, `profit`, `commission`, `bonus`, `created_at`, `updated_at`) VALUES
+(17, 28, 0, 0, 0, 0, '2022-03-02 08:46:56', '2022-03-02 08:46:56'),
+(16, 27, 0, 0, 0, 0, '2022-03-02 08:45:28', '2022-03-02 08:45:28'),
+(15, 26, 0, 0, 0, 0, '2022-03-02 08:43:23', '2022-03-02 08:43:23'),
 (14, 25, 78, 4444, 0, 44, '2021-12-11 11:38:08', '2022-01-30 07:00:09'),
 (13, 24, 0, 0, 0, 0, NULL, NULL);
 
