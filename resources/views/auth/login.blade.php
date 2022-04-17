@@ -9,81 +9,59 @@
 @endsection
 
 @section('content')
-    <div class="breadcrumb-area" style="background-image:url('{{ asset('images/bg/3.jpg') }}')">
+    <section class="page-title">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-inner">
-                        <h1 class="page-title">Login</h1>
-                        <ul class="page-list">
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                            <li>Login</li>
-                        </ul>
-                    </div>
+                <div class="col col-xs-12">
+                    <h2>Login</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li>Login</li>
+                    </ol>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div> <!-- end row -->
+        </div> <!-- end container -->
+    </section>
 
-    <section class="contact-message-area bg-grey-2 pd-top-96 pd-bottom-100">
+    <section class="contact-section section-padding" style="background-color: #eeeeee;">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-                    <div class="section-title text-center">
-                        <h2 class="title">Login</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
+            <div class="row">
+                <div class="col-12">
+{{--                    <div class="section-title-s4">--}}
+{{--                        <h2>Login</h2>--}}
+{{--                        <p>Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna aliqua.</p>--}}
+{{--                    </div>--}}
                     <div class="contact-form">
                         @include('includes.alerts')
-                        <form method="POST" action="{{ route('login') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('login') }}" enctype="multipart/form-data"
+                              class="form row contact-validation-active">
                             @csrf
-                            <div class="row" style="margin-bottom: 10px;">
-
-                                <div class="col-md-6">
-                                    <div class="single-input-wrap style-2 input-group">
-                                        <label>Email</label>
-                                        <input class="form-control @error('email') is-invalid @enderror" type="text"
-                                               name="email" value="{{ old('email') }}"
-                                               placeholder="Email Address *" required>
-                                        @error('email')
-                                        <span class="invalid-feedback" role="alert">
+                            <div class="col col-sm-6">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email">
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                                        @enderror
-                                    </div><!-- /.form-grp -->
-                                </div><!-- /.col-md-6 -->
-
-                                <div class="col-md-6">
-                                    <div class="single-input-wrap style-2 input-group">
-                                        <label>Password</label>
-                                        <input class="form-control @error('password') is-invalid @enderror" type="password" name="password" placeholder="Password" autocomplete="new-password" required>
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                        @enderror
-                                    </div><!-- /.form-grp -->
-                                </div><!-- /.col-md-6 -->
-
-                                <div class="col-md-12">
-                                    <div class="submit-area text-center">
-                                        <button type="submit" class="btn btn-pink">
-                                            LOGIN <i class="la la-arrow-right"></i></button>
-                                    </div>
-                                </div>
-
+                                @enderror
                             </div>
-
-
-
+                            <div class="col col-sm-6">
+                                <label for="password">Password</label>
+                                <input type="text" class="form-control" id="password" name="password">
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="col col-xs-12 submit-btn">
+                                <button type="submit">Submit</button>
+                            </div>
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> <!-- end row -->
+        </div> <!-- end container -->
     </section>
+
 @endsection

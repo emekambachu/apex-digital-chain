@@ -72,7 +72,7 @@
                     <div class="media">
                         <img src="/photos/{{!empty($user->image) ? $user->image : 'noimage.png'}}" class="img-fluid">
                         <div class="media-body align-self-center">
-                            <h6><span>Hi,</span> {{ $user->name }}</h6>
+                            <h6 class="text-white"><span>Hi,</span> {{ $user->name }}</h6>
                         </div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -130,7 +130,7 @@
                     </a>
                 </li>
                 <li class="nav-item theme-text">
-                    <a href="{{ url('/') }}" class="nav-link"> KMH </a>
+                    <a href="{{ url('/') }}" class="nav-link"> ADC </a>
                 </li>
             </ul>
 

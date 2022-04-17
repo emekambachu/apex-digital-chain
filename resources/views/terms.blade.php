@@ -23,7 +23,7 @@
         <div class="container">
 
             <div class="row">
-                <div class="col col-md-7">
+                <div class="col-12">
                     <div class="about-details">
                         <h3>General</h3>
                         <p>The terms and conditions contained herein apply to the investment services of Apex Digital Chain investment company made available through its official website at www.apexdigitalchain.com. All information made available to the investor/client pertaining to this Promotion, including information contained within websites of Apex Digital Chain, form a legal agreement between the investor/client and Apex Digital Chain.<br>
@@ -60,11 +60,6 @@
                     </div>
                 </div>
 
-                <div class="col col-md-5">
-                    <div class="about-img">
-                        <img src="{{ asset('images/about/1.jpg') }}" alt="">
-                    </div>
-                </div>
             </div>
         </div> <!-- end container -->
     </section>

@@ -9,7 +9,7 @@
     <meta name="author" content="themexriver">
 
     <!-- Page Title -->
-    <title> @yield('title') - Apex Digital Chain </title>
+    <title> @yield('title') - Apex Digital Chain</title>
 
     <!-- Favicon and Touch Icons -->
     <link href="{{ asset('main/assets/images/favicon/favicon.png') }}"
@@ -80,14 +80,7 @@
                     </div>
                     <div class="col col-sm-6">
                         <div class="language">
-                            <span><i class="fa fa-globe"></i> Lang:</span>
-                            <div class="select-box">
-                                <select class="selectpicker" id="language-select">
-                                    <option>Eng</option>
-                                    <option>Ban</option>
-                                    <option>Tur</option>
-                                </select>
-                            </div>
+                            <div id="google_translate_element"></div>
                         </div>
                     </div>
                 </div>
@@ -119,21 +112,17 @@
                                 <li><a href="{{ url('about') }}">About us</a></li>
                                 <li><a href="{{ url('terms') }}">Terms of use</a></li>
                                 <li><a href="{{ url('legal') }}">Legal</a></li>
-                                <li><a href="{{ url('faq') }}">FAQ</a></li>
+{{--                                <li><a href="{{ url('faq') }}">FAQ</a></li>--}}
                             </ul>
                         </li>
                         <li><a href="{{ url('contact') }}">Contact</a></li>
+                        <li><a style="color: #FDD415; font-weight: bolder; font-size: 16px;"
+                               href="{{ route('login') }}">Login</a></li>
+                        <li><a style="color: #FDD415; font-weight: bolder; font-size: 16px;"
+                               href="{{ route('register') }}">Register</a></li>
                     </ul>
                 </div><!-- end of nav-collapse -->
-                <div class="search-social">
-                    <div class="social">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+
             </div><!-- end of container -->
         </nav>
     </header>
@@ -162,12 +151,9 @@
                         <div class="widget links-widget">
                             <h3>Links</h3>
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="{{ url('about') }}">About</a></li>
+                                <li><a href="{{ url('terms') }}">Terms of use</a></li>
+                                <li><a href="{{ url('legal') }}">Legal</a></li>
                             </ul>
                         </div>
                     </div>
@@ -176,9 +162,8 @@
                         <div class="widget support-widget">
                             <h3>Support</h3>
                             <ul>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Submit a Ticket</a></li>
-                                <li><a href="#">Professional Services</a></li>
+                                <li><a href="{{ url('contact') }}">Contact Us</a></li>
+                                <li><a href="{{ url('services') }}">Services</a></li>
                             </ul>
                         </div>
                     </div>
@@ -202,8 +187,6 @@
                                 <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss-square"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -230,6 +213,14 @@
 
 <!-- Custom script for this template -->
 <script src="{{ asset('main/assets/js/script.js') }}"></script>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 
 </html>

