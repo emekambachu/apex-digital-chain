@@ -74,7 +74,7 @@
                 <div class="row">
                     <div class="col col-sm-6">
                         <ul class="contact-info">
-                            <li><i class="fa fa-phone-square"></i> Phone: +123 (4567) 890</li>
+                            <li><i class="fa fa-phone-square"></i> Phone: +61480003962</li>
                             <li><i class="fa fa-clock-o"></i> Mon - Fri: 9 am - 7 pm</li>
                         </ul>
                     </div>
@@ -140,9 +140,9 @@
                             <div class="footer-logo">
                                 <img src="{{ asset('main/assets/images/footer-logo.png') }}" alt></div>
                             <ul class="contact-info">
-                                <li><i class="fa fa-phone"></i> +123 (4567) 890  </li>
+                                <li><i class="fa fa-phone"></i> +61480003962  </li>
                                 <li><i class="fa fa-envelope"></i> info@apexdigitalchain.com</li>
-                                <li><i class="fa fa-home"></i> 380 St Kilda Road, Melbourne VIC 3004, Australia</li>
+                                <li><i class="fa fa-home"></i> 380 St Kilda Road, Melbourne VIC 3004</li>
                             </ul>
                         </div>
                     </div>
