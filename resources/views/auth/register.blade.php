@@ -6,7 +6,7 @@
 
 @section('top-assets')
     <script src="{{ asset('js/countries.js') }}" type="text/javascript"></script>
-    {!! RecaptchaV3::initJs() !!}
+    {!! \RecaptchaV3::initJs() !!}
 @endsection
 
 @section('content')
