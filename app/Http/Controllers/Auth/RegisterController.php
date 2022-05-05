@@ -47,6 +47,16 @@ class RegisterController extends Controller
     }
 
     /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showRegistrationForm()
+    {
+        return view('auth.register');
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -57,6 +67,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'age' => ['required'],
             'referer' => ['nullable'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             'mobile' => ['nullable', 'min:10', 'regex:/^([0-9\s\-\+\(\)]*)$/'],
@@ -67,6 +78,7 @@ class RegisterController extends Controller
             'address' => ['nullable', 'string', 'max:100'],
             'wallet_address.*.name' => ['nullable'],
             'wallet_address.*.address' => ['nullable'],
+            'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
         ]);
     }
 

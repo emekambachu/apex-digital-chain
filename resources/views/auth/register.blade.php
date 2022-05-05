@@ -6,6 +6,7 @@
 
 @section('top-assets')
     <script src="{{ asset('js/countries.js') }}" type="text/javascript"></script>
+    {!! RecaptchaV3::initJs() !!}
 @endsection
 
 @section('content')
@@ -79,7 +80,21 @@
                             </div>
 
                             <div class="row" style="margin-bottom: 10px;">
-                                <div class="col-md-6">
+                                <div class="col-md-3">
+                                    <div class="">
+                                        <label>Age</label>
+                                        <input class="form-control @error('age') is-invalid @enderror"
+                                               type="number" name="age" min="18" value="{{ old('age') }}"
+                                               placeholder="Age">
+                                        @error('age')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div><!-- /.form-grp -->
+                                </div><!-- /.col-md-6 -->
+
+                                <div class="col-md-3">
                                     <div class="">
                                         <label>Referer (Referer address, Optional)</label>
                                         <input class="form-control @error('referer') is-invalid @enderror"
@@ -215,6 +230,18 @@
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
+                                        @enderror
+                                    </div><!-- /.form-grp -->
+                                </div><!-- /.col-md-12 -->
+
+                                <div class="col-md-4">
+                                    <div class="">
+                                        <label>Captcha</label>
+                                        {!! RecaptchaV3::field('register') !!}
+                                        @error($errors->has('g-recaptcha-response'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                        </span>
                                         @enderror
                                     </div><!-- /.form-grp -->
                                 </div><!-- /.col-md-12 -->
