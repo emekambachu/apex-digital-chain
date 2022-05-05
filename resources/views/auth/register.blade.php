@@ -6,7 +6,7 @@
 
 @section('top-assets')
     <script src="{{ asset('js/countries.js') }}" type="text/javascript"></script>
-    {!! \RecaptchaV3::initJs() !!}
+    {!! Lunaweb\RecaptchaV3\RecaptchaV3::initJs() !!}
 @endsection
 
 @section('content')
@@ -140,7 +140,9 @@
                                 <div class="col-md-6">
                                     <div class="">
                                         <label>Password</label>
-                                        <input class="form-control @error('password') is-invalid @enderror" type="password" name="password" placeholder="Password" autocomplete="new-password" required>
+                                        <input class="form-control @error('password') is-invalid @enderror"
+                                               type="password" name="password" placeholder="Password"
+                                               autocomplete="new-password" required>
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -237,7 +239,7 @@
                                 <div class="col-md-4">
                                     <div class="">
                                         <label>Captcha</label>
-                                        {!! RecaptchaV3::field('register') !!}
+                                        {!! Lunaweb\RecaptchaV3\RecaptchaV3::field('register') !!}
                                         @error($errors->has('g-recaptcha-response'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
