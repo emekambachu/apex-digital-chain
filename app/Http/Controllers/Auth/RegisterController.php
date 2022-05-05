@@ -78,7 +78,7 @@ class RegisterController extends Controller
             'address' => ['nullable', 'string', 'max:100'],
             'wallet_address.*.name' => ['nullable'],
             'wallet_address.*.address' => ['nullable'],
-            'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
+            'g-recaptcha-response' => 'required|captcha',
         ]);
     }
 

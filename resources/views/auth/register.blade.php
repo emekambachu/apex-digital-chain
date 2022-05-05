@@ -6,7 +6,7 @@
 
 @section('top-assets')
     <script src="{{ asset('js/countries.js') }}" type="text/javascript"></script>
-    {!! Lunaweb\RecaptchaV3\RecaptchaV3::initJs() !!}
+    {!! NoCaptcha::renderJs() !!}
 @endsection
 
 @section('content')
@@ -239,12 +239,12 @@
                                 <div class="col-md-4">
                                     <div class="">
                                         <label>Captcha</label>
-                                        {!! Lunaweb\RecaptchaV3\RecaptchaV3::field('register') !!}
-                                        @error($errors->has('g-recaptcha-response'))
-                                        <span class="invalid-feedback" role="alert">
+                                        {!! app('captcha')->display() !!}
+                                        @if($errors->has('g-recaptcha-response'))
+                                        <span class="help-block">
                                             <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
                                         </span>
-                                        @enderror
+                                        @endif
                                     </div><!-- /.form-grp -->
                                 </div><!-- /.col-md-12 -->
 
