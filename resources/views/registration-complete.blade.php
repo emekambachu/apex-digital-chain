@@ -22,17 +22,19 @@
 @endsection
 
 @section('content')
-    <div class="breadcrumb-area" style="background-image:url('{{ asset('images/bg/3.jpg') }}')">
+    <section class="page-title">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-inner">
-                        <h1 class="page-title">Registration Complete</h1>
-                    </div>
+                <div class="col col-xs-12">
+                    <h2>Registration complete</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li>Registration complete</li>
+                    </ol>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div> <!-- end row -->
+        </div> <!-- end container -->
+    </section>
 
     <div class="container">
         <div class="row">

@@ -239,9 +239,10 @@
                                 <div class="col-md-4">
                                     <div class="">
                                         <label>Captcha</label>
-                                        {!! app('captcha')->display() !!}
-                                        @if($errors->has('g-recaptcha-response'))
-                                        <span class="help-block">
+                                        {!! NoCaptcha::renderJs() !!}
+                                        {!! NoCaptcha::display() !!}
+                                        @if ($errors->has('g-recaptcha-response'))
+                                        <span class="text-danger">
                                             <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
                                         </span>
                                         @endif
