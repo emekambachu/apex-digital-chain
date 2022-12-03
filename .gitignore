@@ -11,4 +11,5 @@ npm-debug.log
 yarn-error.log
 .idea
 /public_html/photos
+/public/photos
 vendor
