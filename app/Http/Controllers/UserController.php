@@ -141,45 +141,34 @@ class UserController extends Controller
     }
 
     public function updateAccount(Request $request){
-
         //Get Image
         if($file = request()->file('image')){
-
             if(!File::exists('photos')) {
                 // create path
                 File::makeDirectory('photos', $mode = 0777, true, true);
             }
-
             // Add current time in seconds to image
             $name = time() . $file->getClientOriginalName();
-
             //Move image to photos directory
             $file->move('photos', $name);
-
-            $data['image'] = $name;
-
+            $input['image'] = $name;
         }else{
-            $data['image'] = Auth::user()->image;
+            $input['image'] = Auth::user()->image;
         }
 
         //Vlaid ID
         if($file = request()->file('valid_id')){
-
             if(!File::exists('photos')) {
                 // create path
                 File::makeDirectory('photos', $mode = 0777, true, true);
             }
-
             // Add current time in seconds to image
             $name = time() . $file->getClientOriginalName();
-
             //Move image to photos directory
             $file->move('photos', $name);
-
-            $data['valid_id'] = $name;
-
+            $input['valid_id'] = $name;
         }else{
-            $data['valid_id'] = Auth::user()->valid_id;
+            $input['valid_id'] = Auth::user()->valid_id;
         }
 
         if(!empty($request->input('password'))){
@@ -205,16 +194,14 @@ class UserController extends Controller
         $input['mobile'] = $request->input('mobile');
         $input['address'] = $request->input('address');
 
-        User::where([
-            ['id', '=', Auth::user()->id]
-        ])->update($input);
+        $user = User::findOrFail(Auth::user()->id);
+        $user->update($input);
 
         Session::flash('success', 'Your User Details has been updated');
         return redirect()->back();
     }
 
     public function cryptoWallets(){
-
         $addresses = UserWalletAddress::all();
         return view('users.settings.crypto-wallet-address', compact('addresses'));
     }

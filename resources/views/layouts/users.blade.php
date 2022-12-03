@@ -71,7 +71,7 @@
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user"
                    id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media">
-                        <img src="/photos/{{!empty($user->image) ? $user->image : 'noimage.png'}}" class="img-fluid">
+                        <img src="{{ !empty($user->image) ? asset('/photos/'.$user->image) : asset('/photos/noimage.png') }}" class="img-fluid">
                         <div class="media-body align-self-center">
                             <h6 class="text-white"><span>Hi,</span> {{ $user->name }}</h6>
                         </div>
