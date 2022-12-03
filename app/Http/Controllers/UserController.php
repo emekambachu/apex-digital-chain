@@ -118,9 +118,9 @@ class UserController extends Controller
 
         // Send Email to registered User
         Mail::send('emails.users.withdrawal-request', $data, static function ($message) use ($data) {
-            $message->from('info@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->from('info@apexdigitalchain.com', 'Apex Digital Chain');
             $message->to($data['email'], $data['name'])->cc('support@apexdigitalchain.com');
-            $message->replyTo('support@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->replyTo('support@apexdigitalchain.com', 'Apex Digital Chain');
             $message->subject('Withdrawal request of '.$data['amount']);
         });
 

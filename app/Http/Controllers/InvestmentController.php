@@ -107,9 +107,9 @@ class InvestmentController extends Controller
 
         // Send Email to registered User
         Mail::send('emails.investments.add-new-investment', $data, static function ($message) use ($data) {
-            $message->from('info@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->from('info@apexdigitalchain.com', 'Apex Digital Chain');
             $message->to($data['email'], $data['name'])->cc('support@apexdigitalchain.com');
-            $message->replyTo('support@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->replyTo('support@apexdigitalchain.com', 'Apex Digital Chain');
             $message->subject('Your investment has been submitted');
         });
 

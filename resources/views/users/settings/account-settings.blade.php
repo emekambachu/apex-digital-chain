@@ -22,7 +22,7 @@
                 <div class="statbox widget box box-shadow">
                     <div class="widget-header">
                         <div class="row">
-                            @include('includes.admin-alerts')
+                            @include('includes.alerts')
                         </div>
                     </div>
                     <div class="widget-content widget-content-area">
@@ -82,8 +82,8 @@
 
         <div class="footer-wrapper">
             <div class="footer-section f-section-1">
-                <p class="center-block">Copyright © {{ date('Y') }}
-                    <a target="_blank" href="{{ url('/') }}">Krypto Market Hub</a>, All rights reserved.</p>
+                <p class="text-dark">Copyright © {{ date('Y') }}
+                    <a target="_blank" href="{{ url('/') }}">Apex Digital Chain</a>, All rights reserved.</p>
             </div>
         </div>
 

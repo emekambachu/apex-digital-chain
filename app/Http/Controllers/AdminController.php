@@ -80,9 +80,9 @@ class AdminController extends Controller
         ];
 
         Mail::send('emails.users.verify-user', $data, static function ($message) use ($data) {
-            $message->from('info@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->from('info@apexdigitalchain.com', 'Apex Digital Chain');
             $message->to($data['email'], $data['name'])->cc('admin@apexdigitalchain.com');
-            $message->replyTo('info@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->replyTo('info@apexdigitalchain.com', 'Apex Digital Chain');
             $message->subject($data['status'] === 'activated' ? 'Your Account has been activated' : 'Your Account has been deactivated');
         });
 
@@ -160,9 +160,9 @@ class AdminController extends Controller
         ];
 
         Mail::send('emails.fund-wallet', $data, static function ($message) use ($data) {
-            $message->from('admin@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->from('admin@apexdigitalchain.com', 'Apex Digital Chain');
             $message->to($data['email'], $data['name'])->cc('admin@apexdigitalchain.com');
-            $message->replyTo('admin@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->replyTo('admin@apexdigitalchain.com', 'Apex Digital Chain');
             $message->subject('Credit Transfer of $' . number_format($data['amount']) . ' From Investment');
         });
 
@@ -209,9 +209,9 @@ class AdminController extends Controller
         ];
 
         Mail::send('emails.add-profit', $data, static function ($message) use ($data) {
-            $message->from('admin@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->from('admin@apexdigitalchain.com', 'Apex Digital Chain');
             $message->to($data['email'], $data['name'])->cc('admin@apexdigitalchain.com');
-            $message->replyTo('admin@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->replyTo('admin@apexdigitalchain.com', 'Apex Digital Chain');
             $message->subject('Credit Transfer of $' . number_format($data['amount']) . ' on profit');
         });
 
@@ -261,9 +261,9 @@ class AdminController extends Controller
         ];
 
         Mail::send('emails.add-commission', $data, static function ($message) use ($data) {
-            $message->from('admin@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->from('admin@apexdigitalchain.com', 'Apex Digital Chain');
             $message->to($data['email'], $data['name'])->cc('admin@apexdigitalchain.com');
-            $message->replyTo('admin@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->replyTo('admin@apexdigitalchain.com', 'Apex Digital Chain');
             $message->subject('Credit Transfer of $' . number_format($data['amount']) . ' on commission');
         });
 
@@ -313,9 +313,9 @@ class AdminController extends Controller
         ];
 
         Mail::send('emails.add-bonus', $data, static function ($message) use ($data) {
-            $message->from('admin@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->from('admin@apexdigitalchain.com', 'Apex Digital Chain');
             $message->to($data['email'], $data['name'])->cc('admin@apexdigitalchain.com');
-            $message->replyTo('admin@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->replyTo('admin@apexdigitalchain.com', 'Apex Digital Chain');
             $message->subject('Credit Transfer of $' . number_format($data['amount']) . ' on bonus');
         });
 
@@ -367,9 +367,9 @@ class AdminController extends Controller
         ];
 
         Mail::send('emails.investments.approve-investment', $data, static function ($message) use ($data) {
-            $message->from('info@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->from('info@apexdigitalchain.com', 'Apex Digital Chain');
             $message->to($data['email'], $data['name'])->cc('admin@apexdigitalchain.com');
-            $message->replyTo('info@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->replyTo('info@apexdigitalchain.com', 'Apex Digital Chain');
             $message->subject($data['status']);
         });
 
@@ -462,9 +462,9 @@ class AdminController extends Controller
         ];
 
         Mail::send('emails.approve-withdrawal', $data, static function ($message) use ($data) {
-            $message->from('info@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->from('info@apexdigitalchain.com', 'Apex Digital Chain');
             $message->to($data['email'], $data['name'])->cc('admin@apexdigitalchain.com');
-            $message->replyTo('info@apexdigitalchain.com', 'Krypto Market Hub');
+            $message->replyTo('info@apexdigitalchain.com', 'Apex Digital Chain');
             $message->subject($data['status']);
         });
 
